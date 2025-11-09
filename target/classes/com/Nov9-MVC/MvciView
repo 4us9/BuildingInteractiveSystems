@@ -1,0 +1,15 @@
+class MvciView extends VBox {
+	
+	MvciView(MvciModel model, Runnable actionHandler)
+	{
+		TextField numberTF = new TextField();
+		numberTF.textProperty().bindBidirectional(model.numberProperty());
+		
+		HBox dataBox = new HBox(4, new Label("Enter a number: "), numberTF);
+		Button button = new Button("Add 5");
+		
+		button.setOnAction(evt -> actionHandler.run());
+		button.disableProperty().bind(model.moreAllowedProperty().not());
+		getChildren().addAll(databox, button);
+	}
+}

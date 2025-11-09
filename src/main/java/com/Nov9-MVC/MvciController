@@ -1,0 +1,16 @@
+public class MvciController {
+	private final Region view;
+	
+	public MvciController()
+	{
+		MvciModel viewModel = new MvciModel();
+		MvciInteractor interactor = new MvciInteractor(viewModel);
+		
+		view = new McviView(viewModel, interactor :: addFive)
+	} 
+	
+	public Region getView()
+	{
+		return view;
+	}
+}
