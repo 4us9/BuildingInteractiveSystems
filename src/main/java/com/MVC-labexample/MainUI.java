@@ -16,4 +16,5 @@ public class MainUI extends Region {
 
         this.getChildren().add(view);
     }
+    
 }
