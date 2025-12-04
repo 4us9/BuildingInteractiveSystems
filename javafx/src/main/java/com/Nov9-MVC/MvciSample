@@ -1,0 +1,14 @@
+public class MvciSample extends Application {
+	public static void main(String[] args)
+	{
+		launch(args);
+	}
+	
+	@Override
+	public void start(Stage primaryStage)
+	{
+		Scene scene = new Scene(new MvciController().getView, 500, 200);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+}
